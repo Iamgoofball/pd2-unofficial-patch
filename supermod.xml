@@ -1,0 +1,4 @@
+<?xml version="1.0"?>
+<mod name="PD2UnofficialPatch" global_key="pd2_patch">
+	<:include src="hooks.xml" />
+</mod>

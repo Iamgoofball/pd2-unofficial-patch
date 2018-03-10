@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<hooks script_path="lua/lib/" hook_id="lib/">
+	<post :script_path="tweak_data/charactertweakdata.lua" :hook_id="tweak_data/charactertweakdata"/>
+	<group :script_path="units/enemies/" :hook_id="units/enemies/">
+		<post :script_path="cop/actions/upper_body/copactionshoot.lua" :hook_id="cop/actions/upper_body/copactionshoot"/>
+		<post :script_path="cop/logics/coplogicbase.lua" :hook_id="cop/logics/coplogicbase"/>
+		<post :script_path="tank/logics/tankcoplogicattack.lua" :hook_id="tank/logics/tankcoplogicattack"/>
+	</group>
+</hooks>

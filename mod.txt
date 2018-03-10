@@ -1,0 +1,12 @@
+{
+ "name" : "PD2 Unofficial Patch"
+ "description" : "azdfgzrgs",
+ "author" : "Hoxi",
+ "contact" : "https://discord.gg/BdN4as7",
+ "version" : "BETA",
+ "priority" : 499,
+ "blt_version" : 2,
+ "image" : "res.png",
+ "undisablable" : true,
+ "disable_safe_mode" : false
+}
