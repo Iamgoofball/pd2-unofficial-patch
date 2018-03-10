@@ -1,3 +1,27 @@
+local mvec3_set = mvector3.set
+local mvec3_set_z = mvector3.set_z
+local mvec3_sub = mvector3.subtract
+local mvec3_norm = mvector3.normalize
+local mvec3_dir = mvector3.direction
+local mvec3_set_l = mvector3.set_length
+local mvec3_add = mvector3.add
+local mvec3_dot = mvector3.dot
+local mvec3_cross = mvector3.cross
+local mvec3_rot = mvector3.rotate_with
+local mvec3_rand_orth = mvector3.random_orthogonal
+local mvec3_lerp = mvector3.lerp
+local mrot_axis_angle = mrotation.set_axis_angle
+local temp_vec1 = Vector3()
+local temp_vec2 = Vector3()
+local temp_vec3 = Vector3()
+local temp_rot1 = Rotation()
+local bezier_curve = {
+	0,
+	0,
+	1,
+	1
+}
+
 function CopLogicBase._set_attention_obj(data, new_att_obj, new_reaction)
 	local old_att_obj = data.attention_obj
 	data.attention_obj = new_att_obj

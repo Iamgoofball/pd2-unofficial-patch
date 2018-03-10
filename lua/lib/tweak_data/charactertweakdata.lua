@@ -1,47 +1,16 @@
 local origin_init_medic = CharacterTweakData._init_medic
 local origin_init_tank = CharacterTweakData._init_tank
 local origin_init_gensec = CharacterTweakData._init_gensec
+local origin_init = CharacterTweakData.init
 local origin_presets = CharacterTweakData._presets
 
-function CharacterTweakData:_presets(tweak_data)
-	presets.surrender.easy = {
-		base_chance = 0.3,
-		significant_chance = 0.35,
-		reasons = {
-			health = {
-				[1] = 0.1,
-				[0.999] = 0.4
-			},
-			weapon_down = 0.5,
-			pants_down = 1,
-			isolated = 0.08
-		},
-		factors = {
-			flanked = 0.05,
-			unaware_of_aggressor = 0.1,
-			enemy_weap_cold = 0.11,
-			aggressor_dis = {
-				[1000] = 0,
-				[300] = 0.2
-			}
-		}
-	}
-end
-
-function CharacterTweakData:_init_tank(presets)
-	origin_init_tank(presets)
+function CharacterTweakData:init(tweak_data)
+	local presets = self:_presets(tweak_data)
+	origin_init(self, tweak_data)
 	self.tank.melee_anims = nil
 	self.tank.no_recoil = true
-end
-
-function CharacterTweakData:_init_medic(presets)
-	origin_init_medic(presets)
 	self.medic.suppression = nil
-end
-
-function CharacterTweakData:_init_gensec(presets)
-	origin_init_gensec(presets)
-	presets.suppression.hard_def
+	self.gensec.suppression = presets.suppression.hard_def
 end
 
 function CharacterTweakData:_multiply_all_speeds(walk_mul, run_mul)
